@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,39 +18,28 @@ import java.util.logging.Logger;
  * Classe JogoDao
  * @author yodem
  */
-public class JogoDao implements IDao{
-    public static final String TABLE = "pedido";
+public class JogoDao implements IDao<Jogo>{
+    public static final String TABLE = "SteamJogo";
 
     @Override
     public String getSaveStatement() {
-        return "insert into "+ TABLE +" (funcionario_id, cliente_id, valorTotal, delivery) values (?, ?, ?, ?)";
+        return "insert into "
+               + TABLE 
+               + " (NOME, EDICAO, CLASSIFICACAO, GENERO, SINOPSE, PRECO, NOMEDESENVOLVEDOR) values (?, ?, ?, ?, ?, ?, ?)";
     }
 
     @Override
     public String getUpdateStatement() {
-        return "update "+ TABLE + " set funcionario_id = ?, cliente_id = ?, valorTotal = ?, delivery = ? where id = ?";
-    }
-
-    @Override
-    public void composeSaveOrUpdateStatement(PreparedStatement pstmt, Pedido e) {
-        try{
-            pstmt.setObject(1,e.getFuncionario().getId());
-            pstmt.setObject(2,e.getCliente().getId());                 
-            pstmt.setObject(3,e.getValorTotal());      
-            pstmt.setObject(4,e.getDelivery());      
-    
-            if(e.getId() != null) {
-                pstmt.setObject(5, e.getId());
-            }
-
-        } catch(SQLException ex){
-            Logger.getLogger(CredencialDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        return "update "
+               + TABLE 
+               + " set EDICAO = ?, CLASSIFICACAO = ?, GENERO = ?, SINOPSE = ?, PRECO = ?, NOMEDESENVOLVEDOR = ? where NOME = ?";
     }
 
     @Override
     public String getFindByIdStatement() {
-        return "select * from "+ TABLE + " where id = ?";
+        return "select * from "
+               + TABLE 
+               + " where NOME = ?";
     }
 
     @Override
@@ -59,18 +49,57 @@ public class JogoDao implements IDao{
 
     @Override
     public String getMoveToTrashStatement() {
-        return "update "+ TABLE + " set excluido = 1 where id = ?";
+        return "delete from "+ TABLE + " where NOME = ?";
+    }
+    
+    @Override
+    public void composeSaveStatement(PreparedStatement psmt, Jogo e) {
+        // (NOME, EDICAO, CLASSIFICACAO, GENERO, SINOPSE, PRECO, NOMEDESENVOLVEDOR) values (?, ?, ?, ?, ?, ?, ?)
+        try{
+            psmt.setObject(1,e.getNome());
+            psmt.setObject(2,e.getEdicao());                 
+            psmt.setObject(3,e.getClassificacao());      
+            psmt.setObject(4,e.getGenero());      
+            psmt.setObject(5,e.getSinopse());
+            psmt.setObject(6,e.getPreco());
+            psmt.setObject(7,e.getDesenvolvedor().getNome());
+        } catch (SQLException ex) {
+            Logger.getLogger(JogoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-
     @Override
-    public Jogo extractObject(ResultSet resultSet) {
+    public void composeUpdateStatement(PreparedStatement psmt, Jogo e) {
+        //  set EDICAO = ?, CLASSIFICACAO = ?, GENERO = ?, SINOPSE = ?, PRECO = ?, NOMEDESENVOLVEDOR = ? where NOME = ?"
+        try{
+            psmt.setObject(1,e.getEdicao());                 
+            psmt.setObject(2,e.getClassificacao());      
+            psmt.setObject(3,e.getGenero());      
+            psmt.setObject(4,e.getSinopse());
+            psmt.setObject(5,e.getPreco());
+            psmt.setObject(6,e.getDesenvolvedor().getNome());
+            psmt.setObject(7,e.getNome());            
+        } catch (SQLException ex) {
+            Logger.getLogger(JogoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @Override
+    public List<Jogo> extractObjects(ResultSet resultSet) {
         Jogo jogo = null;
         ArrayList<Legenda> legendas = new ArrayList<>();        
         ArrayList<Linguagem> linguagens = new ArrayList<>();
+        try{
+            jogo = new Jogo();
+        }
+        return null;
+    }
+
+    @Override
+    public Jogo extractObject(ResultSet resultSet) {
 
         try {
-            jogo = new Jogo();
+
             pedido.setId(resultSet.getLong("id"));
             funcionario = new FuncionarioDao().findById(resultSet.getLong("funcionario_id"));
             pedido.setFuncionario(funcionario);
@@ -88,7 +117,25 @@ public class JogoDao implements IDao{
         }
 
         return pedido;
+    }    
+
+    @Override
+    public Long saveOrUpdate(Jogo e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
-    
+
+    @Override
+    public Jogo findById() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<Jogo> findAll() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void moveToTrash(Jogo e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

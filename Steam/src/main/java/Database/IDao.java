@@ -18,12 +18,13 @@ public interface IDao<T> {
     //save
     public String getSaveStatement();
     public String getUpdateStatement();
-    public void composeSaveOrUpdateStatement(PreparedStatement pstmt, T e);
+    public void composeSaveStatement(PreparedStatement psmt, T e);
+    public void composeUpdateStatement(PreparedStatement psmt, T e);
     public Long saveOrUpdate(T e);
     
     //Get find by Id
     public String getFindByIdStatement();
-    public T findById(Long id);
+    public T findById();
     
     //Get find all
     public String getFindAllStatement();
