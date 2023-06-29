@@ -32,10 +32,6 @@ public interface IDao<T> {
     //Trash
     public String getMoveToTrashStatement();
     public void moveToTrash(T e);
-    public String getRestoreFromTrashStatement();
-    public void restoreFromTrash(T e);
-    public String getFindAllOnTrashStatement();
-    public List<T> findAllOnTrashStatement();
     
     //Assembly objects
     public T extractObject(ResultSet resultSet);

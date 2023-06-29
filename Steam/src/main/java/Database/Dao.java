@@ -24,8 +24,6 @@ public abstract class Dao<T> implements IDao<T> {
     @Override
     public Long saveOrUpdate(T e) {
 
-        // Primary key
-        Long id = 0L;
 
         if (((Entity) e).getId() == null
                 || ((Entity) e).getId() == 0) {
@@ -153,49 +151,6 @@ public abstract class Dao<T> implements IDao<T> {
         }
     }
 
-    @Override
-    public List<T> findAllOnTrashStatement() {
-        try ( PreparedStatement preparedStatement
-                = DbConnection.getConnection().prepareStatement(
-                        getFindAllOnTrashStatement())) {
-
-            // Show the full sentence
-            System.out.println(">>FINDALLONTRASH SQL: " + preparedStatement);
-
-            // Performs the query on the database
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            // Returns the respective object
-            return extractObjects(resultSet);
-
-        } catch (Exception ex) {
-            System.out.println("Exception: " + ex);
-        }
-
-        return null;
-    }
-
-    @Override
-    public void restoreFromTrash(T e) {
-
-        try ( PreparedStatement preparedStatement
-                = DbConnection.getConnection().prepareStatement(
-                        getRestoreFromTrashStatement())) {
-
-            // Assemble the SQL statement with the data (->?)
-            preparedStatement.setLong(1, ((Entity) e).getId());
-//            composeSaveOrUpdateStatement(preparedStatement, findById(((Entity) e).getId()));
-
-            // Show the full sentence
-            System.out.println(">>RESTOREFROMTRASH SQL: " + preparedStatement);
-
-            // Performs the update on the database
-            preparedStatement.executeUpdate();
-
-        } catch (Exception ex) {
-            System.out.println("Exception: " + ex);
-        }
-    }
 
     @Override
     public List<T> extractObjects(ResultSet resultSet) {

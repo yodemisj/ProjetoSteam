@@ -65,15 +65,31 @@
                                           <Component id="cboDistribuidor" min="-2" pref="159" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="txtEdicao" min="-2" pref="133" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="lblGenero" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="txtGenero" min="-2" pref="130" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="lblClassificacao" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cboClassificacao" min="-2" pref="86" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
+                                                  <Component id="btnAdicionarLinguagem" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="txtEdicao" min="-2" pref="133" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="lblGenero" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="txtGenero" min="-2" pref="130" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="lblClassificacao" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="cboClassificacao" min="-2" pref="86" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                                  <Component id="btnAdicionarLegenda" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
@@ -132,6 +148,8 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblPreco" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="ftfPreco" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAdicionarLinguagem" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAdicionarLegenda" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -280,6 +298,16 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="ftfPreco">
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAdicionarLegenda">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Editar legenda"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAdicionarLinguagem">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Editar linguagens"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
