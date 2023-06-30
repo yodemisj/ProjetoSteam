@@ -25,33 +25,44 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        dskPrincipal = new javax.swing.JPanel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
+        miCadastraConta = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        miCadastraConta1 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        miListaConta = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout dskPrincipalLayout = new javax.swing.GroupLayout(dskPrincipal);
+        dskPrincipal.setLayout(dskPrincipalLayout);
+        dskPrincipalLayout.setHorizontalGroup(
+            dskPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 652, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        dskPrincipalLayout.setVerticalGroup(
+            dskPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 615, Short.MAX_VALUE)
         );
 
         jMenu3.setText("File");
 
         jMenu1.setText("Cadastrar");
+
+        miCadastraConta.setText("Conta");
+        miCadastraConta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miCadastraContaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(miCadastraConta);
 
         jMenuItem4.setText("Jogo");
         jMenu1.add(jMenuItem4);
@@ -60,12 +71,28 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu2.setText("Editar");
 
+        miCadastraConta1.setText("Conta");
+        miCadastraConta1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miCadastraConta1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(miCadastraConta1);
+
         jMenuItem5.setText("Jogo");
         jMenu2.add(jMenuItem5);
 
         jMenu3.add(jMenu2);
 
         jMenu5.setText("Listar");
+
+        miListaConta.setText("Conta");
+        miListaConta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miListaContaActionPerformed(evt);
+            }
+        });
+        jMenu5.add(miListaConta);
 
         jMenuItem6.setText("Jogo");
         jMenu5.add(jMenuItem6);
@@ -85,19 +112,36 @@ public class Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dskPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dskPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void miCadastraContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadastraContaActionPerformed
+        // TODO add your handling code here:
+        CadastrarConta cadastraConta = new CadastrarConta();
+        cadastraConta.setVisible(true);
+        //cadastroProduto.setClosable(true);
+        dskPrincipal.add(cadastraConta);
+        
+    }//GEN-LAST:event_miCadastraContaActionPerformed
+
+    private void miCadastraConta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadastraConta1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miCadastraConta1ActionPerformed
+
+    private void miListaContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miListaContaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miListaContaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,6 +179,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel dskPrincipal;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -144,7 +189,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JMenuItem miCadastraConta;
+    private javax.swing.JMenuItem miCadastraConta1;
+    private javax.swing.JMenuItem miListaConta;
     // End of variables declaration//GEN-END:variables
 
 }

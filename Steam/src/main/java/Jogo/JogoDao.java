@@ -84,40 +84,40 @@ public class JogoDao implements IDao<Jogo>{
         }
     }
     
-    @Override
-    public List<Jogo> extractObjects(ResultSet resultSet) {
-        Jogo jogo = null;
-        ArrayList<Legenda> legendas = new ArrayList<>();        
-        ArrayList<Linguagem> linguagens = new ArrayList<>();
-        try{
-            jogo = new Jogo();
-        }
-        return null;
-    }
-
-    @Override
-    public Jogo extractObject(ResultSet resultSet) {
-
-        try {
-
-            pedido.setId(resultSet.getLong("id"));
-            funcionario = new FuncionarioDao().findById(resultSet.getLong("funcionario_id"));
-            pedido.setFuncionario(funcionario);
-            cliente = new ClienteDao().findById(resultSet.getLong("cliente_id"));            
-            pedido.setCliente(cliente); 
-            
-            itens = new ItemDao().findByPedidoId(pedido.getId());
-            pedido.setValorTotal(resultSet.getBigDecimal("valorTotal"));
-            pedido.setItens(itens);
-            pedido.setDelivery(resultSet.getBoolean("delivery"));
-            pedido.setExcluido(resultSet.getBoolean("excluido"));
-
-        } catch (SQLException ex) {
-            Logger.getLogger(PedidoDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return pedido;
-    }    
+//    @Override
+//    public List<Jogo> extractObjects(ResultSet resultSet) {
+//        Jogo jogo = null;
+//        ArrayList<Legenda> legendas = new ArrayList<>();        
+//        ArrayList<Linguagem> linguagens = new ArrayList<>();
+//        try{
+//            jogo = new Jogo();
+//        }
+//        return null;
+//    }
+//
+//    @Override
+//    public Jogo extractObject(ResultSet resultSet) {
+//
+//        try {
+//
+//            pedido.setId(resultSet.getLong("id"));
+//            funcionario = new FuncionarioDao().findById(resultSet.getLong("funcionario_id"));
+//            pedido.setFuncionario(funcionario);
+//            cliente = new ClienteDao().findById(resultSet.getLong("cliente_id"));            
+//            pedido.setCliente(cliente); 
+//            
+//            itens = new ItemDao().findByPedidoId(pedido.getId());
+//            pedido.setValorTotal(resultSet.getBigDecimal("valorTotal"));
+//            pedido.setItens(itens);
+//            pedido.setDelivery(resultSet.getBoolean("delivery"));
+//            pedido.setExcluido(resultSet.getBoolean("excluido"));
+//
+//        } catch (SQLException ex) {
+//            Logger.getLogger(PedidoDao.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//        return pedido;
+//    }    
 
     @Override
     public Long saveOrUpdate(Jogo e) {
@@ -136,6 +136,16 @@ public class JogoDao implements IDao<Jogo>{
 
     @Override
     public void moveToTrash(Jogo e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Jogo extractObject(ResultSet resultSet) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<Jogo> extractObjects(ResultSet resultSet) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
