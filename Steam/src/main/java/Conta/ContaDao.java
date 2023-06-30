@@ -22,6 +22,7 @@ import java.util.logging.Logger;
 public class ContaDao implements IDao<Conta>{
     
     public static final String TABLE = "steamContaPrincipal";
+    public static final String TABLE2 = "steamControleConta";
 
     @Override
     public String getSaveStatement() {
@@ -29,6 +30,39 @@ public class ContaDao implements IDao<Conta>{
             + TABLE
             + " (login, nickname, senha, pergunta, cpfUsuario)"
             + " VALUES (?, ?, ?, ?, ?)";    
+    }
+    
+    public String getSaveStatementTable2() {
+    return "INSERT INTO "
+            + "steamControleConta"
+            + " (login, tipo)"
+            + " VALUES (?, 'ContaPrincipal')";    
+    }
+    
+    public String getSaveStatementPergunta() {
+    return "INSERT INTO "
+            + "steamPergunta"
+            + " (pergunta, resposta)"
+            + " VALUES (?, ?)";    
+    }
+    
+    public void composeSaveStatementPergunta(PreparedStatement pstmt, Conta e) {
+        try {
+            pstmt.setString(1, e.getPergunta());
+            pstmt.setString(2, e.getResposta());
+            
+        } catch (Exception ex) {
+            Logger.getLogger(ContaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void composeSaveStatementContaControle(PreparedStatement pstmt, Conta e) {
+        try {
+            pstmt.setString(1, e.getLogin());
+            
+        } catch (Exception ex) {
+            Logger.getLogger(ContaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @Override
@@ -45,7 +79,52 @@ public class ContaDao implements IDao<Conta>{
         }
     }
     
+    public void saveContaPergunta(Conta e){
+        try (
+                PreparedStatement preparedStatement
+                        = DbConnection.getConnection().prepareStatement(
+                        getSaveStatementPergunta(),
+                        Statement.RETURN_GENERATED_KEYS)) {
+                // Assemble the SQL statement with the data (->?)
+                composeSaveStatementPergunta(preparedStatement, e);
+
+                // Show the full sentence
+                System.out.println(">>SAVE SQL: " + preparedStatement);
+                System.out.println(">> " + e.toString());
+                // Performs insertion into the database
+                preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ContaDao.class.getName() + " >> 1a").log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ContaDao.class.getName() + " >> 2a").log(Level.SEVERE, null, ex);
+        }   
+    }
+    
+    public void saveContaControle(Conta e) {
+        
+        try (
+        PreparedStatement preparedStatement
+                = DbConnection.getConnection().prepareStatement(
+                    getSaveStatementTable2(),
+                    Statement.RETURN_GENERATED_KEYS)) {
+            // Assemble the SQL statement with the data (->?)
+            composeSaveStatement(preparedStatement, e);
+
+            // Show the full sentence
+            System.out.println(">>SAVE SQL: " + preparedStatement);
+            System.out.println(">> " + e.toString());
+            // Performs insertion into the database
+            preparedStatement.executeUpdate();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ContaDao.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ContaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }  
+    }
+    
     public void save(Conta e) {
+//        saveContaPergunta(e);
+//        saveContaControle(e);
         try ( 
                 PreparedStatement preparedStatement
                 = DbConnection.getConnection().prepareStatement(
@@ -59,13 +138,12 @@ public class ContaDao implements IDao<Conta>{
                 System.out.println(">> " + e.toString());
                 // Performs insertion into the database
                 preparedStatement.executeUpdate();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ContaDao.class.getName() + " >> 1c").log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ContaDao.class.getName() + " >> 2c").log(Level.SEVERE, null, ex);
         }   
-            catch (ClassNotFoundException ex) {
-                Logger.getLogger(ContaDao.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
-                Logger.getLogger(ContaDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+      }
 
     @Override
     public String getUpdateStatement() {

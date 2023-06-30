@@ -284,8 +284,11 @@ public class CadastrarConta extends javax.swing.JInternalFrame {
             novaConta.setLogin(txtLogin.getText());
             novaConta.setNickname(txtNickname.getText());
             novaConta.setPergunta(txtPergunta.getText());
+            novaConta.setResposta(txtResposta.getText());
             novaConta.setSenha(txtSenha.getText());
             
+            new ContaDao().saveContaPergunta(novaConta);
+            new ContaDao().saveContaControle(novaConta);
             new ContaDao().save(novaConta);
                     
         } catch (Exception e) {
