@@ -31,10 +31,9 @@ public class AdicionarLinguagem extends javax.swing.JInternalFrame {
         lstLiguagem = new javax.swing.JList<>();
         btnAdicionar = new javax.swing.JButton();
         btnRemover = new javax.swing.JButton();
-        cboLiguagem = new javax.swing.JComboBox<>();
         lblLinguagem = new javax.swing.JLabel();
-        btnConcluir = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        txtLiguagem = new javax.swing.JTextField();
 
         lstLiguagem.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -47,11 +46,7 @@ public class AdicionarLinguagem extends javax.swing.JInternalFrame {
 
         btnRemover.setText("Remover");
 
-        cboLiguagem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         lblLinguagem.setText("Linguagens");
-
-        btnConcluir.setText("Concluir");
 
         jButton1.setText("Concluir");
 
@@ -68,8 +63,8 @@ public class AdicionarLinguagem extends javax.swing.JInternalFrame {
                             .addComponent(lblLinguagem)
                             .addGap(18, 18, 18)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jScrollPane1)
-                                .addComponent(cboLiguagem, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+                                .addComponent(txtLiguagem)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRemover)
@@ -77,11 +72,6 @@ public class AdicionarLinguagem extends javax.swing.JInternalFrame {
                             .addComponent(btnAdicionar)
                             .addGap(59, 59, 59))))
                 .addContainerGap(103, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(btnConcluir)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,7 +79,7 @@ public class AdicionarLinguagem extends javax.swing.JInternalFrame {
                 .addGap(67, 67, 67)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLinguagem)
-                    .addComponent(cboLiguagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtLiguagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdicionar)
@@ -99,11 +89,6 @@ public class AdicionarLinguagem extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(btnConcluir)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -129,13 +114,12 @@ public class AdicionarLinguagem extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionar;
-    private javax.swing.JButton btnConcluir;
     private javax.swing.JButton btnRemover;
-    private javax.swing.JComboBox<String> cboLiguagem;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblLinguagem;
     private javax.swing.JList<String> lstLiguagem;
+    private javax.swing.JTextField txtLiguagem;
     // End of variables declaration//GEN-END:variables
 }

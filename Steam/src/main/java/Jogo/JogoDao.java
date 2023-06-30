@@ -6,6 +6,7 @@
 package Jogo;
 
 import Database.IDao;
+import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -83,41 +84,51 @@ public class JogoDao implements IDao<Jogo>{
             Logger.getLogger(JogoDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-//    @Override
-//    public List<Jogo> extractObjects(ResultSet resultSet) {
-//        Jogo jogo = null;
-//        ArrayList<Legenda> legendas = new ArrayList<>();        
-//        ArrayList<Linguagem> linguagens = new ArrayList<>();
-//        try{
-//            jogo = new Jogo();
-//        }
-//        return null;
-//    }
-//
-//    @Override
-//    public Jogo extractObject(ResultSet resultSet) {
-//
-//        try {
-//
-//            pedido.setId(resultSet.getLong("id"));
-//            funcionario = new FuncionarioDao().findById(resultSet.getLong("funcionario_id"));
-//            pedido.setFuncionario(funcionario);
-//            cliente = new ClienteDao().findById(resultSet.getLong("cliente_id"));            
-//            pedido.setCliente(cliente); 
-//            
-//            itens = new ItemDao().findByPedidoId(pedido.getId());
-//            pedido.setValorTotal(resultSet.getBigDecimal("valorTotal"));
-//            pedido.setItens(itens);
-//            pedido.setDelivery(resultSet.getBoolean("delivery"));
-//            pedido.setExcluido(resultSet.getBoolean("excluido"));
-//
-//        } catch (SQLException ex) {
-//            Logger.getLogger(PedidoDao.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//        return pedido;
-//    }    
+
+    @Override
+    public List<Jogo> extractObjects(ResultSet resultSet) {
+        Jogo jogo = null;
+        ArrayList<Legenda> legendas = new ArrayList<>();        
+        ArrayList<Linguagem> linguagens = new ArrayList<>();
+        try{
+            jogo = new Jogo();
+        }
+        return null;
+    }
+
+    @Override
+    public Jogo extractObject(ResultSet resultSet) {
+            Jogo jogo = null;
+            ArrayList<Legenda> legendas = new ArrayList<>();        
+            ArrayList<Linguagem> linguagens = new ArrayList<>();
+        try {
+            jogo.setNome(resultSet.getString(""));                  
+            jogo.setEdicao(resultSet.getString(""));
+            jogo.setGenero(resultSet.getString(""));
+            jogo.setLegendas(resultSet.getString(""));
+            jogo.setLinguagens(linguagens);
+            jogo.setSinopse(TABLE);
+            jogo.setClassificacao(TABLE);
+            jogo.setPreco(BigDecimal.ZERO);
+            jogo.setDesenvolvedor(desenvolvedor);
+            pedido.setId(resultSet.getLong("id"));
+            funcionario = new FuncionarioDao().findById(resultSet.getLong("funcionario_id"));
+            pedido.setFuncionario(funcionario);
+            cliente = new ClienteDao().findById(resultSet.getLong("cliente_id"));            
+            pedido.setCliente(cliente); 
+            
+            itens = new ItemDao().findByPedidoId(pedido.getId());
+            pedido.setValorTotal(resultSet.getBigDecimal("valorTotal"));
+            pedido.setItens(itens);
+            pedido.setDelivery(resultSet.getBoolean("delivery"));
+            pedido.setExcluido(resultSet.getBoolean("excluido"));
+
+        } catch (SQLException ex) {
+            Logger.getLogger(PedidoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return pedido;
+    }    
 
     @Override
     public Long saveOrUpdate(Jogo e) {

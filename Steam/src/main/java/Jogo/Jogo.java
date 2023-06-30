@@ -21,7 +21,6 @@ public class Jogo {
     private BigDecimal preco;
     private ArrayList<Legenda> legendas;
     private ArrayList<Linguagem> linguagens;
-    
     private Desenvolvedor desenvolvedor;
 
     public Jogo() {

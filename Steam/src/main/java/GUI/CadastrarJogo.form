@@ -57,9 +57,9 @@
                               <Group type="102" attributes="0">
                                   <Component id="txtNome" min="-2" pref="261" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="lblDistribuidor" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDesenvolvedor" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="cboDistribuidor" min="-2" pref="159" max="-2" attributes="0"/>
+                                  <Component id="cboDesenvolvedor" min="-2" pref="159" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -127,8 +127,8 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblNome" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblDistribuidor" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cboDistribuidor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblDesenvolvedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cboDesenvolvedor" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -173,12 +173,12 @@
             <Property name="name" type="java.lang.String" value="lblNome" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblDistribuidor">
+        <Component class="javax.swing.JLabel" name="lblDesenvolvedor">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Distribuidor"/>
+            <Property name="text" type="java.lang.String" value="Desenvolvedor"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cboDistribuidor">
+        <Component class="javax.swing.JComboBox" name="cboDesenvolvedor">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
