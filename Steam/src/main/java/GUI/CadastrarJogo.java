@@ -29,8 +29,8 @@ public class CadastrarJogo extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         txtNome = new javax.swing.JTextField();
         lblNome = new javax.swing.JLabel();
-        lblDistribuidor = new javax.swing.JLabel();
-        cboDistribuidor = new javax.swing.JComboBox<>();
+        lblDesenvolvedor = new javax.swing.JLabel();
+        cboDesenvolvedor = new javax.swing.JComboBox<>();
         txtSinopse = new javax.swing.JTextField();
         lblSinopse = new javax.swing.JLabel();
         txtEdicao = new javax.swing.JTextField();
@@ -57,9 +57,9 @@ public class CadastrarJogo extends javax.swing.JInternalFrame {
         lblNome.setText("Nome");
         lblNome.setName("lblNome"); // NOI18N
 
-        lblDistribuidor.setText("Distribuidor");
+        lblDesenvolvedor.setText("Desenvolvedor");
 
-        cboDistribuidor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboDesenvolvedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblSinopse.setText("Sinopse");
 
@@ -115,9 +115,9 @@ public class CadastrarJogo extends javax.swing.JInternalFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblDistribuidor)
+                                .addComponent(lblDesenvolvedor)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cboDistribuidor, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cboDesenvolvedor, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -166,8 +166,8 @@ public class CadastrarJogo extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNome)
-                    .addComponent(lblDistribuidor)
-                    .addComponent(cboDistribuidor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblDesenvolvedor)
+                    .addComponent(cboDesenvolvedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEdicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -232,14 +232,14 @@ public class CadastrarJogo extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JComboBox<String> cboDistribuidor;
+    private javax.swing.JComboBox<String> cboDesenvolvedor;
     private javax.swing.JComboBox<String> cboItem;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblClassificacao;
-    private javax.swing.JLabel lblDistribuidor;
+    private javax.swing.JLabel lblDesenvolvedor;
     private javax.swing.JLabel lblEdicao;
     private javax.swing.JLabel lblGenero;
     private javax.swing.JLabel lblNome;

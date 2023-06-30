@@ -6,6 +6,7 @@
 package Jogo;
 
 import Database.IDao;
+import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -97,9 +98,19 @@ public class JogoDao implements IDao<Jogo>{
 
     @Override
     public Jogo extractObject(ResultSet resultSet) {
-
+            Jogo jogo = null;
+            ArrayList<Legenda> legendas = new ArrayList<>();        
+            ArrayList<Linguagem> linguagens = new ArrayList<>();
         try {
-
+            jogo.setNome(resultSet.getString(""));                  
+            jogo.setEdicao(resultSet.getString(""));
+            jogo.setGenero(resultSet.getString(""));
+            jogo.setLegendas(resultSet.getString(""));
+            jogo.setLinguagens(linguagens);
+            jogo.setSinopse(TABLE);
+            jogo.setClassificacao(TABLE);
+            jogo.setPreco(BigDecimal.ZERO);
+            jogo.setDesenvolvedor(desenvolvedor);
             pedido.setId(resultSet.getLong("id"));
             funcionario = new FuncionarioDao().findById(resultSet.getLong("funcionario_id"));
             pedido.setFuncionario(funcionario);

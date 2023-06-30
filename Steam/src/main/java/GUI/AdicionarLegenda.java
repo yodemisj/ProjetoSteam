@@ -28,16 +28,14 @@ public class AdicionarLegenda extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lblLegenda = new javax.swing.JLabel();
-        cboLegenda = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         lstLegenda = new javax.swing.JList<>();
         btnAdicionar = new javax.swing.JButton();
         btnRemover = new javax.swing.JButton();
         btnConcluir = new javax.swing.JButton();
+        txtLegenda = new javax.swing.JTextField();
 
         lblLegenda.setText("Legendas");
-
-        cboLegenda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lstLegenda.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -75,8 +73,8 @@ public class AdicionarLegenda extends javax.swing.JInternalFrame {
                         .addComponent(lblLegenda)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1)
-                            .addComponent(cboLegenda, 0, 323, Short.MAX_VALUE))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+                            .addComponent(txtLegenda))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -85,7 +83,7 @@ public class AdicionarLegenda extends javax.swing.JInternalFrame {
                 .addGap(75, 75, 75)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLegenda)
-                    .addComponent(cboLegenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtLegenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdicionar)
@@ -123,10 +121,10 @@ public class AdicionarLegenda extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnAdicionar;
     private javax.swing.JButton btnConcluir;
     private javax.swing.JButton btnRemover;
-    private javax.swing.JComboBox<String> cboLegenda;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblLegenda;
     private javax.swing.JList<String> lstLegenda;
+    private javax.swing.JTextField txtLegenda;
     // End of variables declaration//GEN-END:variables
 }
