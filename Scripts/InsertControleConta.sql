@@ -1,5 +1,6 @@
 INSERT INTO steamControleConta (login, tipo)
 VALUES ('joaodasneves@mail.com', 'ContaPrincipal');
+DELETE FROM steamControleConta WHERE login = 'joaodasneves@mail.com';
 
 INSERT INTO steamControleConta (login, tipo)
 VALUES ('mariaamendoim@mail.com', 'ContaPrincipal');

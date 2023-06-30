@@ -84,7 +84,7 @@ public class JogoDao implements IDao<Jogo>{
             Logger.getLogger(JogoDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @Override
     public List<Jogo> extractObjects(ResultSet resultSet) {
         Jogo jogo = null;
@@ -147,6 +147,16 @@ public class JogoDao implements IDao<Jogo>{
 
     @Override
     public void moveToTrash(Jogo e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Jogo extractObject(ResultSet resultSet) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<Jogo> extractObjects(ResultSet resultSet) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
